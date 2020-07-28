@@ -1,0 +1,22 @@
+:project wevre/let-not
+	:author Mike Weaver
+	:created 2020-07
+
+:section Introduction
+
+	Monad comprehension to short-circuit computations using a `fail?` predicate.
+
+:section How to use
+
+	Use to short-circuit out of a series of computations/tests where any one
+	computation could fail, without needing to throw an exception. Examples are
+	checking cli options, or validating HTLM form submissions.
+
+:section How it works
+
+	`let-not` defines a monad `break-m` that extends `maybe-m` so that in
+	addition to checking for `nil`, it also checks a `fail?` predicated. If any
+	computation returns a value such that `(fail? val)` is true, the whole
+	compatation will stop and yield that value.
+
+:section Learnings
