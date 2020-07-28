@@ -30,6 +30,11 @@
       <artifactId>clojure</artifactId>
       <version>1.10.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>algo.monads</artifactId>
+      <version>0.1.6</version>
+    </dependency>
   </dependencies>
 
   <build>
