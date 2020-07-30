@@ -5,7 +5,7 @@
     :doc "A monad for short-circuiting computations based on a `fail?` predicate."}
   (:require [clojure.algo.monads :refer [monad domonad]]))
 
-(defn- break-m
+(defn break-m
   "An extension to the `maybe-m` monad that in addition to checking for `nil?`
    checks if the computation fails using predicate `fail?`."
   [fail?]
@@ -26,4 +26,4 @@
    `(let-not ::break ~bindings ~return))
 
   ([fail? bindings return]
-   `(domonad (~#'wevre.let-not/break-m ~fail?) ~bindings ~return)))
+   `(domonad (break-m ~fail?) ~bindings ~return)))
