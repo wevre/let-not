@@ -4,7 +4,7 @@
 
   <groupId>wevre</groupId>
   <artifactId>let-not</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <name>let-not</name>
   <description>Monad comprehension to short-circuit computations
   with a `fail?` predicate</description>
@@ -21,7 +21,7 @@
     <url>https://github.com/wevre/let-not</url>
     <connection>scm:git:git://github.com/wevre/let-not.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/wevre/let-not.git</developerConnection>
-    <tag>v0.0.1</tag>
+    <tag>v0.0.2</tag>
   </scm>
 
   <dependencies>

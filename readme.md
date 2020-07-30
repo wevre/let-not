@@ -13,17 +13,16 @@ indicate failure.
 
 deps.edn
 
-    wevre/let-not {:mvn/version "0.0.1"}
+    wevre/let-not {:mvn/version "0.0.2"}
 
 project.clj
 
-    [wevre/let-not "0.0.1"]
+    [wevre/let-not "0.0.2"]
 
 # How to use
 
 ```
-(ns my-namespace
-  (:require [wevre.let-not :refer [let-not]]))
+(require '[wevre.let-not :refer [let-not]])
 
 (defn something-with [x]
   (if (looks-okay x)
@@ -154,8 +153,7 @@ track of any intermediate values. But it still demonstrates nicely the use of
 ## Replace `cond` with `let-not`
 
 ```
-(ns myns
-  (:require [wevre.let-not :refer [let-not]))
+(require '[wevre.let-not :refer [let-not])
 
 (defn validate-args-let-not
   "Validate command line arguments with `let-not`. At each step, if a condition
