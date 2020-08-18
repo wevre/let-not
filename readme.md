@@ -21,7 +21,7 @@ project.clj
 
 # How to use
 
-```
+```clj
 (require '[wevre.let-not :refer [let-not]])
 
 (defn something-with [x]
@@ -43,28 +43,28 @@ languages (descendants of C) was a `do-while(0)` loop for short-circuiting. I
 would deal with all my 'unhappy path' items at the beginning and bail out early
 if anything went wrong (cf. Swift's `guard` statement).
 
-```
+```php
 do {
-   <something that might break>
-   <next thing that might break>
-   <everything is good to go, do your thing>
+   // <something that might break>
+   // <next thing that might break>
+   // <everything is good to go, do your thing>
    return;
 } while (0);
-<handle the breaking issue>
+// <handle the breaking issue>
 ```
 
 This can also be wrapped in an exception if needed, although I personally try to
 reduce my dependency on those.
 
-```
+```php
 try do {
-   <do breaking/exception stuff>
-   <do your thing>
+   // <do breaking/exception stuff>
+   // <do your thing>
    return;
 } while(0) catch (Exception e) {
-   <handle the exception>
+   // <handle the exception>
 }
-<handle the breaking issue>
+// <handle the breaking issue>
 ```
 
 Or you could catch the exception inside the `do-while` and then break from
@@ -75,7 +75,7 @@ use this approach: I need to check that a bunch of stuff is okay and, if it is,
 do the final thing. My choices are (a) nested `if`s (or `if-let`s or
 `when-let`s) or `cond`; or (b) exceptions.
 
-```
+```clj
 (if <first thing is okay>
   (if <second thing is okay>
     (if <third thing is okay>
@@ -130,7 +130,7 @@ track of any intermediate values. But it still demonstrates nicely the use of
 
 ## Original clojure/tools.cli example code
 
-```
+```clj
 (defn validate-args
   "Validate command line arguments. Either return a map indicating the program
   should exit (with a error message, and optional ok status), or a map
@@ -152,7 +152,7 @@ track of any intermediate values. But it still demonstrates nicely the use of
 
 ## Replace `cond` with `let-not`
 
-```
+```clj
 (require '[wevre.let-not :refer [let-not])
 
 (defn validate-args-let-not
